@@ -1,8 +1,7 @@
-
-  <h1><%= @movie.title%></h1>
   <ul>
+    <li><%= @movie.title%></li>
     <li><%= @movie.autor%></li>
     <li><%= @movie.released%></li>
     <li><%= @movie.description%></li>
   </ul>
-  <button type="button"><%= link_to "Back", movies_path%></button>
+<%= link_to "Back", movies_path %>
