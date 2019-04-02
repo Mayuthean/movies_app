@@ -1,11 +1,14 @@
 <h1>All Movies</h1>
+<h3><%=link_to "New Post", new_movie_path%></h3>
 <ul>
   <% @movies.each do |movie| %>
-    <li><%= movie.id%></li>
-    <p><%=link_to movie.title, movie_path(movie)%></p>
-    <p><%= movie.autor%></p>
-    <p><%= movie.released%></p>
-    <p><%= movie.description%></p>
+    <h3><%=movie.id%></h3>
+    <h4><%=link_to movie.title, movie_path(movie)%></h4>
+    <li><%= movie.autor%></li>
+    <li><%= movie.price%></li>
+    <li><%= movie.released%></li>
+    <li><%= movie.description%></li>
+    <%=link_to "Booking", new_movie_book_path(movie)%>
     <%= link_to "Edit", edit_movie_path(movie) %>
     <%= link_to "Delete", movie_path(movie), method: :delete, data: { confirm: "Are you sure" }%>
   <% end %>

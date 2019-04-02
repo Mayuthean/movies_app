@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # patch "movies/:id" => "movies#update"
   # put "movies/:id" => "movies#update"
   # delete "movies/:id" => "movies#destroy"
-  resources:movies
+  resources :movies do
+    resources :books
+  end
 end
